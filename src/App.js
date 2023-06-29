@@ -1,23 +1,25 @@
+import { Outlet } from 'react-router-dom';
+import Dashboardview from './components/Dashboardview';
+import Sidebar from './components/Sidebar';
 import logo from './logo.svg';
-import './App.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <div className="flex overflow-scroll ">
+        <div className="basis-[12%] h-[100vh]">
+          <Sidebar />
+        </div>
+        <div className="basis-[88%] border overflow-scroll h-[100vh]">
+          <Dashboardview />
+          <div>
+            <Outlet></Outlet>
+          </div>
+        </div>
+
+
+      </div>
     </div>
   );
 }
